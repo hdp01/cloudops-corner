@@ -1,22 +1,22 @@
 :root {
-    --primary: #2563eb;
-    --secondary: #1e40af;
+  --primary: #2563eb;
+  --secondary: #1e40af;
 }
 
 * {
-    font-family: 'Segoe UI', sans-serif;
+  font-family: 'Segoe UI', sans-serif;
 }
 
 .hero {
-    background: linear-gradient(135deg, #f3f4f6 0%, #e5e7eb 100%);
+  background: linear-gradient(135deg, #f3f4f6 0%, #e5e7eb 100%);
 }
 
 .card:hover {
-    transform: translateY(-5px);
-    transition: all 0.3s ease;
+  transform: translateY(-5px);
+  transition: all 0.3s ease;
 }
 
 .logo {
-    height: 50px;
-    width: auto;
+  height: 50px;
+  width: auto;
 }
