@@ -21,12 +21,12 @@
       <h2 class="text-3xl font-bold text-center mb-12">Our Expertise</h2>
       <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
         {% for service in [
-          {"title": "Cloud Migration",     "desc": "Seamless transitions to cloud infrastructure"},
-          {"title": "DevOps",              "desc": "CI/CD, automation & best practices"},
-          {"title": "API Development",     "desc": "Scalable & secure APIs"},
-          {"title": "Infrastructure",      "desc": "Customized cloud solutions"},
-          {"title": "Blue‑Green Deploy",   "desc": "Zero‑downtime releases"},
-          {"title": "Network Services",    "desc": "Secure high‑performance networking"}
+          {"title": "Cloud Migration",   "desc": "Seamless transitions to cloud infrastructure"},
+          {"title": "DevOps",            "desc": "CI/CD, automation & best practices"},
+          {"title": "API Development",   "desc": "Scalable & secure APIs"},
+          {"title": "Infrastructure",    "desc": "Customized cloud solutions"},
+          {"title": "Blue‑Green Deploy", "desc": "Zero‑downtime releases"},
+          {"title": "Network Services",  "desc": "Secure high‑performance networking"}
         ] %}
           <div class="card bg-white p-6 rounded-lg shadow-md hover:shadow-xl transition-shadow">
             <h3 class="text-xl font-semibold mb-3 text-blue-600">{{ service.title }}</h3>
@@ -41,14 +41,32 @@
   <section id="industries" class="py-16 bg-gray-50">
     <div class="max-w-7xl mx-auto px-4">
       <h2 class="text-3xl font-bold text-center mb-12">Industries We Serve</h2>
-      <ul class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 text-gray-700 text-lg list-disc list-inside">
-        <li>Finance &amp; Fintech – Compliant, scalable environments</li>
-        <li>Healthcare – HIPAA‑compliant, secure infrastructure</li>
-        <li>E‑commerce – High availability, optimized for traffic</li>
-        <li>SaaS – Full lifecycle DevOps and infra support</li>
-        <li>Education &amp; eLearning – Robust digital learning platforms</li>
-        <li>Startups &amp; SMEs – Agile and cost‑effective cloud journeys</li>
-      </ul>
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+        <div class="card bg-white p-6 rounded-lg shadow-md hover:shadow-xl transition-shadow">
+          <h3 class="text-xl font-semibold mb-2 text-blue-600">Finance &amp; Fintech</h3>
+          <p class="text-gray-700">Compliant, scalable cloud environments for banking, payments, and financial services.</p>
+        </div>
+        <div class="card bg-white p-6 rounded-lg shadow-md hover:shadow-xl transition-shadow">
+          <h3 class="text-xl font-semibold mb-2 text-blue-600">Healthcare</h3>
+          <p class="text-gray-700">Secure, HIPAA‑compliant infrastructure for patient data, telemedicine, and research.</p>
+        </div>
+        <div class="card bg-white p-6 rounded-lg shadow-md hover:shadow-xl transition-shadow">
+          <h3 class="text-xl font-semibold mb-2 text-blue-600">E‑commerce</h3>
+          <p class="text-gray-700">High‑availability, auto‑scaling architecture to handle peaks in traffic and orders.</p>
+        </div>
+        <div class="card bg-white p-6 rounded-lg shadow-md hover:shadow-xl transition-shadow">
+          <h3 class="text-xl font-semibold mb-2 text-blue-600">SaaS</h3>
+          <p class="text-gray-700">Full lifecycle DevOps and infrastructure support for subscription‑based platforms.</p>
+        </div>
+        <div class="card bg-white p-6 rounded-lg shadow-md hover:shadow-xl transition-shadow">
+          <h3 class="text-xl font-semibold mb-2 text-blue-600">Education &amp; eLearning</h3>
+          <p class="text-gray-700">Robust digital classrooms, content delivery, and analytics at scale.</p>
+        </div>
+        <div class="card bg-white p-6 rounded-lg shadow-md hover:shadow-xl transition-shadow">
+          <h3 class="text-xl font-semibold mb-2 text-blue-600">Startups &amp; SMEs</h3>
+          <p class="text-gray-700">Cost‑effective, agile cloud strategies to help you grow and pivot quickly.</p>
+        </div>
+      </div>
     </div>
   </section>
 
