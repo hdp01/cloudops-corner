@@ -1,5 +1,3 @@
-
-
 {
   "version": 2,
   "builds": [
@@ -9,7 +7,9 @@
     }
   ],
   "routes": [
-    { "handle": "filesystem" },
+    {
+      "handle": "filesystem"
+    },
     {
       "src": "/static/(.*)",
       "dest": "/static/$1"
