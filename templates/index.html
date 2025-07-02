@@ -26,26 +26,90 @@
   </section>
 
   <!-- Core Expertise -->
-  <section id="expertise" class="py-16 bg-gray-50">
-    <div class="max-w-7xl mx-auto px-4">
-      <h2 class="text-3xl font-bold text-center mb-12">Our Core Expertise</h2>
-      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-        {% for service in [
-          {"title": "Cloud Migration", "desc": "Seamless and secure transition to AWS, Azure, GCP with zero downtime."},
-          {"title": "DevOps & Automation", "desc": "CI/CD, IaC, container orchestration, and full observability."},
-          {"title": "API Development", "desc": "Secure, scalable REST and GraphQL APIs with full lifecycle support."},
-          {"title": "Infrastructure Management", "desc": "Optimized cloud infra with auto-scaling, cost control, and reliability."},
-          {"title": "Blue-Green Deployments", "desc": "Safe and zero-downtime delivery using modern deployment techniques."},
-          {"title": "Networking & Security", "desc": "Secure, performant cloud networks with VPCs, WAFs, and VPNs."}
-        ] %}
-        <div class="card bg-white p-6 rounded-lg shadow-md hover:shadow-xl transition-shadow">
-          <h3 class="text-xl font-semibold mb-3 text-blue-600">{{ service.title }}</h3>
-          <p class="text-gray-600">{{ service.desc }}</p>
-        </div>
-        {% endfor %}
+  <!-- Core Expertise (Deep Dive) -->
+<section id="expertise" class="py-20 bg-gray-50">
+  <div class="max-w-7xl mx-auto px-4">
+    <h2 class="text-4xl font-bold text-center mb-12">💡 Core Expertise: Deep Dive into Cloud Services</h2>
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+
+      {% set expertise = [
+        {
+          "title": "Cloud Migration",
+          "desc": "Seamless, secure, and strategic cloud transitions.",
+          "points": [
+            "Full lifecycle migration: assessment, planning, execution, and optimization",
+            "From on-prem to AWS, Azure, GCP – public, private, hybrid",
+            "VM, DB, and app migration with zero-downtime strategies",
+            "Post-migration validation & performance tuning"
+          ]
+        },
+        {
+          "title": "DevOps & Automation",
+          "desc": "Modern Infrastructure Meets Agile Development.",
+          "points": [
+            "CI/CD with GitHub Actions, Jenkins, Azure DevOps",
+            "IaC using Terraform, CloudFormation, Ansible",
+            "Containerization with Docker & Kubernetes",
+            "Observability via Prometheus, ELK, Datadog"
+          ]
+        },
+        {
+          "title": "API Development",
+          "desc": "Cloud-native, scalable, secure interfaces.",
+          "points": [
+            "REST/GraphQL APIs using serverless & containers",
+            "Gateways & auth (OAuth, JWT, OpenID)",
+            "Microservices & service mesh (Istio)",
+            "Versioning, throttling, and monitoring"
+          ]
+        },
+        {
+          "title": "Infrastructure Setup & Management",
+          "desc": "Engineered for performance & reliability.",
+          "points": [
+            "Cloud setup: compute, network, storage, databases",
+            "Hybrid & multi-cloud (EKS, AKS, RDS, etc.)",
+            "Auto-scaling, load balancing, cost optimization",
+            "SLA-driven monitoring & support"
+          ]
+        },
+        {
+          "title": "Blue-Green & Canary Deployments",
+          "desc": "Zero-downtime delivery at scale.",
+          "points": [
+            "Automation with Spinnaker, ArgoCD, CodeDeploy",
+            "Staged rollouts, DNS or LB-based switching",
+            "Failovers, rollbacks, and live traffic testing",
+            "Health checks & real-time observability"
+          ]
+        },
+        {
+          "title": "Cloud Networking & Security",
+          "desc": "Fast, reliable & secure cloud connectivity.",
+          "points": [
+            "VPCs, subnets, NATs, peering, VPN & Direct Connect",
+            "WAFs, ACLs, firewalls, zero-trust models",
+            "Global CDN (CloudFront, Azure CDN), DNS routing",
+            "DDoS protection, SSL/TLS, compliance-ready"
+          ]
+        }
+      ] %}
+
+      {% for item in expertise %}
+      <div class="card bg-white p-6 rounded-lg shadow-md hover:shadow-xl transition-shadow">
+        <h3 class="text-2xl font-semibold text-blue-700 mb-2">{{ item.title }}</h3>
+        <p class="text-gray-600 mb-3">{{ item.desc }}</p>
+        <ul class="list-disc list-inside text-sm text-gray-700 space-y-1">
+          {% for point in item.points %}
+            <li>{{ point }}</li>
+          {% endfor %}
+        </ul>
       </div>
+      {% endfor %}
     </div>
-  </section>
+  </div>
+</section>
+
 
   <!-- Industries -->
   <section id="industries" class="py-16 bg-white">
