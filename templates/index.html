@@ -7,106 +7,101 @@
   <section class="hero py-20">
     <div class="max-w-7xl mx-auto px-4 text-center">
       <h1 class="text-4xl md:text-6xl font-bold text-gray-900 mb-6">
-        Cloud Excellence Delivered
+        Welcome to CloudOpsCorner
       </h1>
       <p class="text-xl text-gray-600 mb-8 max-w-3xl mx-auto">
-        Empowering your digital transformation with cutting‑edge cloud solutions
+        Your Partner in Cloud Transformation & Seamless Infrastructure Management
       </p>
     </div>
   </section>
 
-  <!-- Expertise Section -->
-  <section id="expertise" class="py-16 bg-white">
+  <!-- Overview -->
+  <section class="py-16 bg-white">
+    <div class="max-w-4xl mx-auto px-4 text-center">
+      <h2 class="text-3xl font-bold mb-4">Overview</h2>
+      <p class="text-gray-700 text-lg">
+        At CloudOpsCorner, we’re a team of passionate cloud professionals dedicated to transforming how businesses manage and scale their IT infrastructure. From migration to automation and monitoring, we make your cloud journey smooth, secure, and future-ready.
+      </p>
+    </div>
+  </section>
+
+  <!-- Core Expertise -->
+  <section id="expertise" class="py-16 bg-gray-50">
     <div class="max-w-7xl mx-auto px-4">
-      <h2 class="text-3xl font-bold text-center mb-12">Our Expertise</h2>
+      <h2 class="text-3xl font-bold text-center mb-12">Our Core Expertise</h2>
       <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
         {% for service in [
-          {"title": "Cloud Migration",   "desc": "Seamless transitions to cloud infrastructure"},
-          {"title": "DevOps",            "desc": "CI/CD, automation & best practices"},
-          {"title": "API Development",   "desc": "Scalable & secure APIs"},
-          {"title": "Infrastructure",    "desc": "Customized cloud solutions"},
-          {"title": "Blue‑Green Deploy", "desc": "Zero‑downtime releases"},
-          {"title": "Network Services",  "desc": "Secure high‑performance networking"}
+          {"title": "Cloud Migration", "desc": "Seamless and secure transition to AWS, Azure, GCP with zero downtime."},
+          {"title": "DevOps & Automation", "desc": "CI/CD, IaC, container orchestration, and full observability."},
+          {"title": "API Development", "desc": "Secure, scalable REST and GraphQL APIs with full lifecycle support."},
+          {"title": "Infrastructure Management", "desc": "Optimized cloud infra with auto-scaling, cost control, and reliability."},
+          {"title": "Blue-Green Deployments", "desc": "Safe and zero-downtime delivery using modern deployment techniques."},
+          {"title": "Networking & Security", "desc": "Secure, performant cloud networks with VPCs, WAFs, and VPNs."}
         ] %}
-          <div class="card bg-white p-6 rounded-lg shadow-md hover:shadow-xl transition-shadow">
-            <h3 class="text-xl font-semibold mb-3 text-blue-600">{{ service.title }}</h3>
-            <p class="text-gray-600">{{ service.desc }}</p>
-          </div>
+        <div class="card bg-white p-6 rounded-lg shadow-md hover:shadow-xl transition-shadow">
+          <h3 class="text-xl font-semibold mb-3 text-blue-600">{{ service.title }}</h3>
+          <p class="text-gray-600">{{ service.desc }}</p>
+        </div>
         {% endfor %}
       </div>
     </div>
   </section>
 
-  <!-- Industries Section -->
-  <section id="industries" class="py-16 bg-gray-50">
-    <div class="max-w-7xl mx-auto px-4">
-      <h2 class="text-3xl font-bold text-center mb-12">Industries We Serve</h2>
-      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
-        <div class="card bg-white p-6 rounded-lg shadow-md hover:shadow-xl transition-shadow">
-          <h3 class="text-xl font-semibold mb-2 text-blue-600">Finance &amp; Fintech</h3>
-          <p class="text-gray-700">Compliant, scalable cloud environments for banking, payments, and financial services.</p>
+  <!-- Industries -->
+  <section id="industries" class="py-16 bg-white">
+    <div class="max-w-7xl mx-auto px-4 text-center">
+      <h2 class="text-3xl font-bold mb-12">Industries We Serve</h2>
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 text-left">
+        {% for industry in [
+          {"title": "Finance & Fintech", "desc": "Scalable and compliant infrastructure for high-performance financial applications."},
+          {"title": "Healthcare", "desc": "Secure, HIPAA-compliant cloud environments for patient data and digital health."},
+          {"title": "E-commerce", "desc": "High availability and cost-optimized infrastructure for retail platforms."},
+          {"title": "SaaS", "desc": "From dev to production, full lifecycle cloud automation."},
+          {"title": "Education & eLearning", "desc": "Reliable platforms for digital classrooms and learning analytics."},
+          {"title": "Startups & SMEs", "desc": "Affordable and agile cloud strategies tailored to growth."}
+        ] %}
+        <div class="card bg-gray-50 p-6 rounded-lg shadow hover:shadow-md">
+          <h3 class="text-xl font-bold text-blue-600 mb-2">{{ industry.title }}</h3>
+          <p class="text-gray-700">{{ industry.desc }}</p>
         </div>
-        <div class="card bg-white p-6 rounded-lg shadow-md hover:shadow-xl transition-shadow">
-          <h3 class="text-xl font-semibold mb-2 text-blue-600">Healthcare</h3>
-          <p class="text-gray-700">Secure, HIPAA‑compliant infrastructure for patient data, telemedicine, and research.</p>
-        </div>
-        <div class="card bg-white p-6 rounded-lg shadow-md hover:shadow-xl transition-shadow">
-          <h3 class="text-xl font-semibold mb-2 text-blue-600">E‑commerce</h3>
-          <p class="text-gray-700">High‑availability, auto‑scaling architecture to handle peaks in traffic and orders.</p>
-        </div>
-        <div class="card bg-white p-6 rounded-lg shadow-md hover:shadow-xl transition-shadow">
-          <h3 class="text-xl font-semibold mb-2 text-blue-600">SaaS</h3>
-          <p class="text-gray-700">Full lifecycle DevOps and infrastructure support for subscription‑based platforms.</p>
-        </div>
-        <div class="card bg-white p-6 rounded-lg shadow-md hover:shadow-xl transition-shadow">
-          <h3 class="text-xl font-semibold mb-2 text-blue-600">Education &amp; eLearning</h3>
-          <p class="text-gray-700">Robust digital classrooms, content delivery, and analytics at scale.</p>
-        </div>
-        <div class="card bg-white p-6 rounded-lg shadow-md hover:shadow-xl transition-shadow">
-          <h3 class="text-xl font-semibold mb-2 text-blue-600">Startups &amp; SMEs</h3>
-          <p class="text-gray-700">Cost‑effective, agile cloud strategies to help you grow and pivot quickly.</p>
-        </div>
+        {% endfor %}
       </div>
     </div>
   </section>
 
   <!-- Case Studies -->
-  <section id="case-studies" class="py-16 bg-white">
-    <div class="max-w-7xl mx-auto px-4">
+  <section id="case-studies" class="py-16 bg-gray-100">
+    <div class="max-w-6xl mx-auto px-4">
       <h2 class="text-3xl font-bold text-center mb-12">Case Studies</h2>
       <div class="space-y-8">
-        <div class="bg-gray-100 p-6 rounded-lg shadow-sm">
+        <div class="bg-white p-6 rounded-lg shadow">
           <h3 class="text-xl font-semibold text-blue-700">Fintech Cloud Transformation</h3>
-          <p class="text-gray-700">Migrated legacy systems to AWS, reducing costs by 30% and increasing deployment speed by 50%.</p>
+          <p class="text-gray-700">Migrated legacy systems to AWS, cutting costs by 30% and increasing speed by 50%.</p>
         </div>
-        <div class="bg-gray-100 p-6 rounded-lg shadow-sm">
-          <h3 class="text-xl font-semibold text-blue-700">Zero‑Downtime Deployments</h3>
-          <p class="text-gray-700">Implemented blue‑green deployments for an e‑commerce client, ensuring 99.99% uptime during rollouts.</p>
+        <div class="bg-white p-6 rounded-lg shadow">
+          <h3 class="text-xl font-semibold text-blue-700">Zero-Downtime Deployments</h3>
+          <p class="text-gray-700">Blue-green deployment strategy ensured 99.99% availability for a major e‑commerce client.</p>
         </div>
-        <div class="bg-gray-100 p-6 rounded-lg shadow-sm">
-          <h3 class="text-xl font-semibold text-blue-700">SaaS Automation</h3>
-          <p class="text-gray-700">Enabled CI/CD and infrastructure‑as‑code for a SaaS platform, doubling their release velocity.</p>
+        <div class="bg-white p-6 rounded-lg shadow">
+          <h3 class="text-xl font-semibold text-blue-700">SaaS CI/CD Automation</h3>
+          <p class="text-gray-700">Infrastructure-as-code pipelines reduced manual work and doubled deployment velocity.</p>
         </div>
       </div>
     </div>
   </section>
 
   <!-- Testimonials -->
-  <section id="testimonials" class="py-16 bg-gray-50">
+  <section id="testimonials" class="py-16 bg-white">
     <div class="max-w-5xl mx-auto px-4 text-center">
-      <h2 class="text-3xl font-bold mb-12">Testimonials</h2>
+      <h2 class="text-3xl font-bold mb-12">What Our Clients Say</h2>
       <div class="space-y-8">
-        <blockquote class="bg-white p-6 rounded-lg shadow">
-          <p class="text-gray-700 italic">
-            "CloudOpsCorner helped us completely rethink our infrastructure. Their expertise in cloud and DevOps is unmatched."
-          </p>
-          <footer class="mt-4 text-blue-700 font-semibold">— Rajesh T., CTO, FinSolve</footer>
+        <blockquote class="bg-gray-50 p-6 rounded-lg shadow">
+          <p class="italic text-gray-800">"CloudOpsCorner helped us rethink our infrastructure. Their expertise is unmatched."</p>
+          <footer class="mt-4 font-semibold text-blue-700">— Rajesh T., CTO, FinSolve Pvt Ltd</footer>
         </blockquote>
-        <blockquote class="bg-white p-6 rounded-lg shadow">
-          <p class="text-gray-700 italic">
-            "Seamless migration, proactive support, and scalable cloud solutions. Truly a reliable partner!"
-          </p>
-          <footer class="mt-4 text-blue-700 font-semibold">— Neha S., VP Tech, EduLearn</footer>
+        <blockquote class="bg-gray-50 p-6 rounded-lg shadow">
+          <p class="italic text-gray-800">"Seamless cloud migration and proactive support. A trusted partner in digital transformation."</p>
+          <footer class="mt-4 font-semibold text-blue-700">— Neha S., VP Tech, EduLearn</footer>
         </blockquote>
       </div>
     </div>
@@ -116,7 +111,7 @@
   <section id="contact" class="py-16 bg-blue-600 text-white">
     <div class="max-w-3xl mx-auto px-4 text-center">
       <h2 class="text-3xl font-bold mb-6">Let’s Build the Future of Your Cloud</h2>
-      <p class="text-lg mb-6">Reach out to us to schedule a consultation or learn more about our services.</p>
+      <p class="text-lg mb-6">Contact us to schedule a consultation or get a custom cloud strategy for your business.</p>
       <div class="space-y-2">
         <p>Email: <a href="mailto:contact@cloudopscorner.com" class="underline">contact@cloudopscorner.com</a></p>
         <p>Phone: +91‑XXXXXXXXXX</p>
