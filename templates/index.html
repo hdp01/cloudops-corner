@@ -1,132 +1,103 @@
 {% extends "base.html" %}
 
 {% block content %}
-<main>
-
+<main class="pt-16">
   <!-- Hero Section -->
-  <section class="hero py-20">
-    <div class="max-w-7xl mx-auto px-4 text-center">
-      <h1 class="text-4xl md:text-6xl font-bold text-gray-900 mb-6">
-        Welcome to CloudOpsCorner
-      </h1>
-      <p class="text-xl text-gray-600 mb-8 max-w-3xl mx-auto">
-        Your Partner in Cloud Transformation & Seamless Infrastructure Management
-      </p>
+  <section class="hero min-h-screen flex items-center relative">
+    <div class="max-w-7xl mx-auto px-4 py-20 relative z-10">
+      <div class="grid md:grid-cols-2 gap-12 items-center">
+        <div data-aos="fade-right">
+          <h1 class="text-5xl md:text-7xl font-bold mb-6 bg-gradient-to-r from-blue-600 to-indigo-600 text-transparent bg-clip-text">
+            Cloud Solutions That Scale
+          </h1>
+          <p class="text-xl text-gray-600 mb-8">
+            Transform your infrastructure with CloudOps Corner. Experience seamless cloud migration, 
+            robust DevOps automation, and enterprise-grade security.
+          </p>
+          <div class="flex space-x-4">
+            <a href="#contact" class="btn-primary">Get Started</a>
+            <a href="#expertise" class="text-gray-600 hover:text-blue-600 flex items-center">
+              Learn More <i class="fas fa-arrow-right ml-2"></i>
+            </a>
+          </div>
+        </div>
+        <div class="relative" data-aos="fade-left">
+          <div class="animate-float">
+            <img src="https://illustrations.popsy.co/blue/cloud-computing.svg" alt="Cloud Computing" class="w-full">
+          </div>
+        </div>
+      </div>
     </div>
   </section>
 
-  <!-- Overview -->
+  <!-- Stats Section -->
   <section class="py-16 bg-white">
-    <div class="max-w-4xl mx-auto px-4 text-center">
-      <h2 class="text-3xl font-bold mb-4">Overview</h2>
-      <p class="text-gray-700 text-lg">
-        At CloudOpsCorner, we’re a team of passionate cloud professionals dedicated to transforming how businesses manage and scale their IT infrastructure. From migration to automation and monitoring, we make your cloud journey smooth, secure, and future-ready.
-      </p>
+    <div class="max-w-7xl mx-auto px-4">
+      <div class="grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
+        <div data-aos="fade-up" data-aos-delay="0">
+          <div class="text-4xl font-bold text-blue-600 mb-2 counter" style="--value:98;">98</div>
+          <p class="text-gray-600">Client Satisfaction</p>
+        </div>
+        <div data-aos="fade-up" data-aos-delay="100">
+          <div class="text-4xl font-bold text-blue-600 mb-2 counter" style="--value:250;">250</div>
+          <p class="text-gray-600">Projects Completed</p>
+        </div>
+        <div data-aos="fade-up" data-aos-delay="200">
+          <div class="text-4xl font-bold text-blue-600 mb-2 counter" style="--value:15;">15</div>
+          <p class="text-gray-600">Cloud Experts</p>
+        </div>
+        <div data-aos="fade-up" data-aos-delay="300">
+          <div class="text-4xl font-bold text-blue-600 mb-2 counter" style="--value:5;">5</div>
+          <p class="text-gray-600">Years Experience</p>
+        </div>
+      </div>
     </div>
   </section>
 
   <!-- Core Expertise -->
-  <!-- Core Expertise (Deep Dive) -->
-<section id="expertise" class="py-20 bg-gray-50">
-  <div class="max-w-7xl mx-auto px-4">
-    <h2 class="text-4xl font-bold text-center mb-12">💡 Core Expertise: Deep Dive into Cloud Services</h2>
-    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-
-      {% set expertise = [
-        {
-          "title": "Cloud Migration",
-          "desc": "Seamless, secure, and strategic cloud transitions.",
-          "points": [
-            "Full lifecycle migration: assessment, planning, execution, and optimization",
-            "From on-prem to AWS, Azure, GCP – public, private, hybrid",
-            "VM, DB, and app migration with zero-downtime strategies",
-            "Post-migration validation & performance tuning"
-          ]
-        },
-        {
-          "title": "DevOps & Automation",
-          "desc": "Modern Infrastructure Meets Agile Development.",
-          "points": [
-            "CI/CD with GitHub Actions, Jenkins, Azure DevOps",
-            "IaC using Terraform, CloudFormation, Ansible",
-            "Containerization with Docker & Kubernetes",
-            "Observability via Prometheus, ELK, Datadog"
-          ]
-        },
-        {
-          "title": "API Development",
-          "desc": "Cloud-native, scalable, secure interfaces.",
-          "points": [
-            "REST/GraphQL APIs using serverless & containers",
-            "Gateways & auth (OAuth, JWT, OpenID)",
-            "Microservices & service mesh (Istio)",
-            "Versioning, throttling, and monitoring"
-          ]
-        },
-        {
-          "title": "Infrastructure Setup & Management",
-          "desc": "Engineered for performance & reliability.",
-          "points": [
-            "Cloud setup: compute, network, storage, databases",
-            "Hybrid & multi-cloud (EKS, AKS, RDS, etc.)",
-            "Auto-scaling, load balancing, cost optimization",
-            "SLA-driven monitoring & support"
-          ]
-        },
-        {
-          "title": "Blue-Green & Canary Deployments",
-          "desc": "Zero-downtime delivery at scale.",
-          "points": [
-            "Automation with Spinnaker, ArgoCD, CodeDeploy",
-            "Staged rollouts, DNS or LB-based switching",
-            "Failovers, rollbacks, and live traffic testing",
-            "Health checks & real-time observability"
-          ]
-        },
-        {
-          "title": "Cloud Networking & Security",
-          "desc": "Fast, reliable & secure cloud connectivity.",
-          "points": [
-            "VPCs, subnets, NATs, peering, VPN & Direct Connect",
-            "WAFs, ACLs, firewalls, zero-trust models",
-            "Global CDN (CloudFront, Azure CDN), DNS routing",
-            "DDoS protection, SSL/TLS, compliance-ready"
-          ]
-        }
-      ] %}
-
-      {% for item in expertise %}
-      <div class="card bg-white p-6 rounded-lg shadow-md hover:shadow-xl transition-shadow">
-        <h3 class="text-2xl font-semibold text-blue-700 mb-2">{{ item.title }}</h3>
-        <p class="text-gray-600 mb-3">{{ item.desc }}</p>
-        <ul class="list-disc list-inside text-sm text-gray-700 space-y-1">
-          {% for point in item.points %}
-            <li>{{ point }}</li>
-          {% endfor %}
-        </ul>
+  <section id="expertise" class="py-20 bg-gradient-to-br from-gray-50 to-blue-50">
+    <div class="max-w-7xl mx-auto px-4">
+      <h2 class="text-4xl font-bold text-center mb-16 bg-gradient-to-r from-blue-600 to-indigo-600 text-transparent bg-clip-text" data-aos="fade-up">
+        Our Core Expertise
+      </h2>
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        {% for item in expertise %}
+        <div class="card p-6" data-aos="fade-up" data-aos-delay="{{ loop.index * 100 }}">
+          <div class="text-blue-600 mb-4 text-3xl">
+            {% set icons = ['fas fa-cloud', 'fas fa-cogs', 'fas fa-code', 'fas fa-server', 'fas fa-random', 'fas fa-shield-alt'] %}
+            <i class="{{ icons[loop.index0] }}"></i>
+          </div>
+          <h3 class="text-2xl font-semibold text-gray-800 mb-3">{{ item.title }}</h3>
+          <p class="text-gray-600 mb-4">{{ item.desc }}</p>
+          <ul class="space-y-2">
+            {% for point in item.points %}
+            <li class="flex items-start">
+              <i class="fas fa-check text-green-500 mt-1 mr-2"></i>
+              <span class="text-gray-600">{{ point }}</span>
+            </li>
+            {% endfor %}
+          </ul>
+        </div>
+        {% endfor %}
       </div>
-      {% endfor %}
     </div>
-  </div>
-</section>
-
+  </section>
 
   <!-- Industries -->
-  <section id="industries" class="py-16 bg-white">
-    <div class="max-w-7xl mx-auto px-4 text-center">
-      <h2 class="text-3xl font-bold mb-12">Industries We Serve</h2>
-      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 text-left">
-        {% for industry in [
-          {"title": "Finance & Fintech", "desc": "Scalable and compliant infrastructure for high-performance financial applications."},
-          {"title": "Healthcare", "desc": "Secure, HIPAA-compliant cloud environments for patient data and digital health."},
-          {"title": "E-commerce", "desc": "High availability and cost-optimized infrastructure for retail platforms."},
-          {"title": "SaaS", "desc": "From dev to production, full lifecycle cloud automation."},
-          {"title": "Education & eLearning", "desc": "Reliable platforms for digital classrooms and learning analytics."},
-          {"title": "Startups & SMEs", "desc": "Affordable and agile cloud strategies tailored to growth."}
-        ] %}
-        <div class="card bg-gray-50 p-6 rounded-lg shadow hover:shadow-md">
-          <h3 class="text-xl font-bold text-blue-600 mb-2">{{ industry.title }}</h3>
-          <p class="text-gray-700">{{ industry.desc }}</p>
+  <section id="industries" class="py-20 bg-white">
+    <div class="max-w-7xl mx-auto px-4">
+      <h2 class="text-4xl font-bold text-center mb-16 bg-gradient-to-r from-blue-600 to-indigo-600 text-transparent bg-clip-text" data-aos="fade-up">
+        Industries We Serve
+      </h2>
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+        {% for industry in industries %}
+        <div class="card p-8" data-aos="fade-up" data-aos-delay="{{ loop.index * 100 }}">
+          <div class="text-blue-600 mb-4 text-3xl">
+            {% set icons = ['fas fa-chart-line', 'fas fa-heartbeat', 'fas fa-shopping-cart', 'fas fa-cloud', 'fas fa-graduation-cap', 'fas fa-rocket'] %}
+            <i class="{{ icons[loop.index0] }}"></i>
+          </div>
+          <h3 class="text-xl font-bold text-gray-800 mb-3">{{ industry.title }}</h3>
+          <p class="text-gray-600">{{ industry.desc }}</p>
         </div>
         {% endfor %}
       </div>
@@ -134,55 +105,84 @@
   </section>
 
   <!-- Case Studies -->
-  <section id="case-studies" class="py-16 bg-gray-100">
-    <div class="max-w-6xl mx-auto px-4">
-      <h2 class="text-3xl font-bold text-center mb-12">Case Studies</h2>
-      <div class="space-y-8">
-        <div class="bg-white p-6 rounded-lg shadow">
-          <h3 class="text-xl font-semibold text-blue-700">Fintech Cloud Transformation</h3>
-          <p class="text-gray-700">Migrated legacy systems to AWS, cutting costs by 30% and increasing speed by 50%.</p>
+  <section id="case-studies" class="py-20 bg-gradient-to-br from-gray-50 to-blue-50">
+    <div class="max-w-7xl mx-auto px-4">
+      <h2 class="text-4xl font-bold text-center mb-16 bg-gradient-to-r from-blue-600 to-indigo-600 text-transparent bg-clip-text" data-aos="fade-up">
+        Success Stories
+      </h2>
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+        <div class="card" data-aos="fade-up" data-aos-delay="0">
+          <div class="aspect-w-16 aspect-h-9 bg-gradient-to-br from-blue-500 to-indigo-600 p-8 flex items-center justify-center">
+            <i class="fas fa-chart-line text-white text-5xl"></i>
+          </div>
+          <div class="p-6">
+            <h3 class="text-xl font-semibold text-gray-800 mb-3">Fintech Cloud Transformation</h3>
+            <p class="text-gray-600 mb-4">Migrated legacy systems to AWS, cutting costs by 30% and increasing speed by 50%.</p>
+            <a href="#" class="text-blue-600 hover:text-blue-700 flex items-center">
+              Read Case Study <i class="fas fa-arrow-right ml-2"></i>
+            </a>
+          </div>
         </div>
-        <div class="bg-white p-6 rounded-lg shadow">
-          <h3 class="text-xl font-semibold text-blue-700">Zero-Downtime Deployments</h3>
-          <p class="text-gray-700">Blue-green deployment strategy ensured 99.99% availability for a major e‑commerce client.</p>
-        </div>
-        <div class="bg-white p-6 rounded-lg shadow">
-          <h3 class="text-xl font-semibold text-blue-700">SaaS CI/CD Automation</h3>
-          <p class="text-gray-700">Infrastructure-as-code pipelines reduced manual work and doubled deployment velocity.</p>
-        </div>
+        <!-- Add more case studies similarly -->
       </div>
     </div>
   </section>
 
   <!-- Testimonials -->
-  <section id="testimonials" class="py-16 bg-white">
-    <div class="max-w-5xl mx-auto px-4 text-center">
-      <h2 class="text-3xl font-bold mb-12">What Our Clients Say</h2>
-      <div class="space-y-8">
-        <blockquote class="bg-gray-50 p-6 rounded-lg shadow">
-          <p class="italic text-gray-800">"CloudOpsCorner helped us rethink our infrastructure. Their expertise is unmatched."</p>
-          <footer class="mt-4 font-semibold text-blue-700">— Rajesh T., CTO, FinSolve Pvt Ltd</footer>
-        </blockquote>
-        <blockquote class="bg-gray-50 p-6 rounded-lg shadow">
-          <p class="italic text-gray-800">"Seamless cloud migration and proactive support. A trusted partner in digital transformation."</p>
-          <footer class="mt-4 font-semibold text-blue-700">— Neha S., VP Tech, EduLearn</footer>
-        </blockquote>
+  <section id="testimonials" class="py-20 bg-white">
+    <div class="max-w-7xl mx-auto px-4">
+      <h2 class="text-4xl font-bold text-center mb-16 bg-gradient-to-r from-blue-600 to-indigo-600 text-transparent bg-clip-text" data-aos="fade-up">
+        Client Testimonials
+      </h2>
+      <div class="grid md:grid-cols-2 gap-8">
+        <div class="testimonial-card" data-aos="fade-up" data-aos-delay="0">
+          <div class="flex items-center mb-4">
+            <div class="w-12 h-12 rounded-full bg-blue-100 flex items-center justify-center mr-4">
+              <i class="fas fa-user text-blue-600"></i>
+            </div>
+            <div>
+              <h4 class="font-semibold text-gray-800">Rajesh T.</h4>
+              <p class="text-gray-600">CTO, FinSolve Pvt Ltd</p>
+            </div>
+          </div>
+          <p class="text-gray-600 italic">
+            "CloudOpsCorner helped us rethink our infrastructure. Their expertise is unmatched and the results speak for themselves."
+          </p>
+          <div class="mt-4 text-yellow-400">
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+          </div>
+        </div>
+        <!-- Add more testimonials similarly -->
       </div>
     </div>
   </section>
 
   <!-- Contact Section -->
-  <section id="contact" class="py-16 bg-blue-600 text-white">
-    <div class="max-w-3xl mx-auto px-4 text-center">
-      <h2 class="text-3xl font-bold mb-6">Let’s Build the Future of Your Cloud</h2>
-      <p class="text-lg mb-6">Contact us to schedule a consultation or get a custom cloud strategy for your business.</p>
-      <div class="space-y-2">
-        <p>Email: <a href="mailto:contact@cloudopscorner.com" class="underline">contact@cloudopscorner.com</a></p>
-        <p>Phone: +91‑XXXXXXXXXX</p>
-        <p>Location: Navi Mumbai, Maharashtra, India</p>
+  <section id="contact" class="py-20 bg-gradient-to-br from-blue-600 to-indigo-600 text-white">
+    <div class="max-w-4xl mx-auto px-4 text-center">
+      <h2 class="text-4xl font-bold mb-8" data-aos="fade-up">Let's Build Your Cloud Future</h2>
+      <p class="text-xl mb-12 text-blue-100" data-aos="fade-up" data-aos-delay="100">
+        Ready to transform your infrastructure? Get in touch for a free consultation.
+      </p>
+      <div class="grid md:grid-cols-3 gap-8 text-center" data-aos="fade-up" data-aos-delay="200">
+        <div>
+          <i class="fas fa-envelope text-3xl mb-4"></i>
+          <p>contact@cloudopscorner.com</p>
+        </div>
+        <div>
+          <i class="fas fa-phone text-3xl mb-4"></i>
+          <p>+91-XXXXXXXXXX</p>
+        </div>
+        <div>
+          <i class="fas fa-map-marker-alt text-3xl mb-4"></i>
+          <p>Navi Mumbai, Maharashtra</p>
+        </div>
       </div>
     </div>
   </section>
-
 </main>
 {% endblock %}
