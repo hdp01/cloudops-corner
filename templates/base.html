@@ -16,10 +16,16 @@
   <nav class="fixed w-full z-50 bg-white/90 backdrop-blur-md shadow-lg">
     <div class="max-w-7xl mx-auto px-4">
       <div class="flex justify-between items-center py-4">
-        <div class="flex items-center">
-          <span class="text-2xl font-bold bg-gradient-to-r from-blue-600 to-indigo-600 text-transparent bg-clip-text">
-            CloudOps Corner
-          </span>
+        <div class="flex items-center space-x-3">
+          <!-- Updated logo implementation -->
+          <a href="/" class="flex items-center space-x-3 hover:opacity-90 transition-opacity">
+            <div class="w-10 h-10 bg-gradient-to-r from-blue-600 to-indigo-600 rounded-lg flex items-center justify-center">
+              <span class="text-white text-xl font-bold">CC</span>
+            </div>
+            <span class="text-2xl font-bold bg-gradient-to-r from-blue-600 to-indigo-600 text-transparent bg-clip-text">
+              CloudOps Corner
+            </span>
+          </a>
         </div>
         <div class="hidden md:flex space-x-8">
           <a href="#expertise" class="nav-link">Expertise</a>
@@ -28,7 +34,7 @@
           <a href="#testimonials" class="nav-link">Testimonials</a>
           <a href="#contact" class="btn-primary">Contact Us</a>
         </div>
-        <button class="md:hidden menu-btn">
+        <button class="md:hidden menu-btn" aria-label="Toggle menu">
           <i class="fas fa-bars text-gray-600 text-2xl"></i>
         </button>
       </div>
@@ -36,7 +42,10 @@
   </nav>
 
   <!-- Mobile Menu -->
-  <div class="mobile-menu hidden fixed inset-0 z-40 bg-white/95 backdrop-blur-lg">
+  <div class="mobile-menu hidden fixed inset-0 z-40 bg-white/95 backdrop-blur-lg transform transition-transform duration-300">
+    <button class="absolute top-4 right-4 text-gray-600 hover:text-gray-900" aria-label="Close menu">
+      <i class="fas fa-times text-2xl"></i>
+    </button>
     <div class="flex flex-col items-center justify-center h-full space-y-8">
       <a href="#expertise" class="mobile-link">Expertise</a>
       <a href="#industries" class="mobile-link">Industries</a>
@@ -54,28 +63,44 @@
     <div class="max-w-7xl mx-auto px-4">
       <div class="grid md:grid-cols-3 gap-8">
         <div>
-          <h3 class="text-xl font-bold mb-4">CloudOps Corner</h3>
+          <div class="flex items-center space-x-3 mb-4">
+            <div class="w-8 h-8 bg-gradient-to-r from-blue-600 to-indigo-600 rounded-lg flex items-center justify-center">
+              <span class="text-white text-sm font-bold">CC</span>
+            </div>
+            <h3 class="text-xl font-bold">CloudOps Corner</h3>
+          </div>
           <p class="text-gray-300">Transforming businesses through cloud excellence</p>
         </div>
         <div>
           <h3 class="text-xl font-bold mb-4">Quick Links</h3>
           <div class="space-y-2">
-            <a href="#expertise" class="block text-gray-300 hover:text-white">Expertise</a>
-            <a href="#industries" class="block text-gray-300 hover:text-white">Industries</a>
-            <a href="#case-studies" class="block text-gray-300 hover:text-white">Case Studies</a>
+            <a href="#expertise" class="block text-gray-300 hover:text-white transition-colors">Expertise</a>
+            <a href="#industries" class="block text-gray-300 hover:text-white transition-colors">Industries</a>
+            <a href="#case-studies" class="block text-gray-300 hover:text-white transition-colors">Case Studies</a>
+            <a href="#testimonials" class="block text-gray-300 hover:text-white transition-colors">Testimonials</a>
           </div>
         </div>
         <div>
           <h3 class="text-xl font-bold mb-4">Connect</h3>
           <div class="flex space-x-4">
-            <a href="#" class="text-gray-300 hover:text-white"><i class="fab fa-linkedin text-2xl"></i></a>
-            <a href="#" class="text-gray-300 hover:text-white"><i class="fab fa-twitter text-2xl"></i></a>
-            <a href="#" class="text-gray-300 hover:text-white"><i class="fab fa-github text-2xl"></i></a>
+            <a href="#" class="text-gray-300 hover:text-white transition-colors" aria-label="LinkedIn">
+              <i class="fab fa-linkedin text-2xl"></i>
+            </a>
+            <a href="#" class="text-gray-300 hover:text-white transition-colors" aria-label="Twitter">
+              <i class="fab fa-twitter text-2xl"></i>
+            </a>
+            <a href="#" class="text-gray-300 hover:text-white transition-colors" aria-label="GitHub">
+              <i class="fab fa-github text-2xl"></i>
+            </a>
+          </div>
+          <div class="mt-4">
+            <p class="text-gray-300">Email: contact@cloudopscorner.com</p>
+            <p class="text-gray-300">Location: Navi Mumbai, Maharashtra, India</p>
           </div>
         </div>
       </div>
       <div class="border-t border-gray-700 mt-8 pt-8 text-center">
-        <p class="text-gray-400">© 2024 CloudOps Corner. All rights reserved.</p>
+        <p class="text-gray-400">© {{ '2024' if '2024' > '2025-07-03'[0:4] else '2025-07-03'[0:4] }} CloudOps Corner. All rights reserved.</p>
       </div>
     </div>
   </footer>
@@ -84,21 +109,61 @@
     // Initialize AOS
     AOS.init({
       duration: 1000,
-      once: true
+      once: true,
+      offset: 100,
+      easing: 'ease-out-cubic'
     });
 
     // Mobile menu toggle
     const menuBtn = document.querySelector('.menu-btn');
     const mobileMenu = document.querySelector('.mobile-menu');
+    const closeMenuBtn = document.querySelector('.mobile-menu button');
     const mobileLinks = document.querySelectorAll('.mobile-link');
 
-    menuBtn.addEventListener('click', () => {
+    function toggleMenu() {
+      const isHidden = mobileMenu.classList.contains('hidden');
       mobileMenu.classList.toggle('hidden');
-    });
+      
+      // Add animation classes
+      if (isHidden) {
+        mobileMenu.classList.add('animate-fade-in');
+        document.body.style.overflow = 'hidden';
+      } else {
+        mobileMenu.classList.add('animate-fade-out');
+        document.body.style.overflow = '';
+      }
+    }
+
+    menuBtn.addEventListener('click', toggleMenu);
+    closeMenuBtn.addEventListener('click', toggleMenu);
 
     mobileLinks.forEach(link => {
       link.addEventListener('click', () => {
-        mobileMenu.classList.add('hidden');
+        toggleMenu();
+      });
+    });
+
+    // Close mobile menu on escape key press
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape' && !mobileMenu.classList.contains('hidden')) {
+        toggleMenu();
+      }
+    });
+
+    // Smooth scroll for navigation links
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+      anchor.addEventListener('click', function (e) {
+        e.preventDefault();
+        const href = this.getAttribute('href');
+        if (href !== '#') {
+          const target = document.querySelector(href);
+          if (target) {
+            target.scrollIntoView({
+              behavior: 'smooth',
+              block: 'start'
+            });
+          }
+        }
       });
     });
   </script>
